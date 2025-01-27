@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { ServicesSection } from "./components/service-section"
 import { Calendar, Clock, Building2 as Hospital, FileText, AlertCircle, Menu, X, Search, ArrowRight, Users, Clock3, Stethoscope, Download } from 'lucide-react';
+import AppointmentBooking from './components/appointment-booking';
 
+ 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('home');
@@ -284,6 +287,7 @@ function App() {
       {/* Main Content */}
       <main>
         {activeTab === 'home' && (
+          <div>
           <div 
             className="min-h-[calc(100vh-4rem)] bg-cover bg-center bg-no-repeat"
             style={{
@@ -331,6 +335,11 @@ function App() {
               </div>
             </div>
           </div>
+          <AppointmentBooking/>
+          <ServicesSection />
+        </div>
+
+
         )}
 
         {activeTab === 'emergency' && (
